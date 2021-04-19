@@ -1,15 +1,12 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import Link from "next/link";
+
+import Layout from "../components/Layout";
 
 export default function HomePage() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Punk Show</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}></main>
-    </div>
+    <Layout>
+      <h1>Home</h1>
+      <Link href="/about">about</Link>
+    </Layout>
   );
 }
