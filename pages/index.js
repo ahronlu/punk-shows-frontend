@@ -2,11 +2,25 @@ import Link from "next/link";
 
 import Layout from "@/components/Layout";
 
-export default function HomePage() {
+import { API_URL } from "@/config/index";
+import events from "./api/events";
+
+export default function HomePage({ events }) {
   return (
     <Layout>
-      <h1>Home</h1>
-      <Link href="/about">about</Link>
+      <h1>Upcoming Shows</h1>
+      {events.map((event) => (
+        <h2>{event.name}</h2>
+      ))}
     </Layout>
   );
+}
+export async function getStaticProps() {
+  const res = await fetch(`${API_URL}/api/events`);
+  const events = await res.json();
+
+  return {
+    props: { events },
+    revalidate: 1,
+  };
 }
