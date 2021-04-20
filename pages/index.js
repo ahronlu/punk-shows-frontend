@@ -1,17 +1,23 @@
 import Link from "next/link";
-
 import Layout from "@/components/Layout";
-
 import { API_URL } from "@/config/index";
-import events from "./api/events";
+import EventItem from "@/components/EventItem";
 
 export default function HomePage({ events }) {
   return (
     <Layout>
       <h1>Upcoming Shows</h1>
-      {events.map((event) => (
-        <h2>{event.name}</h2>
+      {events.length === 0 && <h3>No events to show</h3>}
+
+      {events.slice(3).map((evt) => (
+        <EventItem key={evt.id} evt={evt} />
       ))}
+
+      {events.length > 0 && (
+        <Link href="/events">
+          <a className="btn-secondary">View All Shows</a>
+        </Link>
+      )}
     </Layout>
   );
 }
