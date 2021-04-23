@@ -38,16 +38,16 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <Button className="btn-seconadry btn-icon" onClick={logout}>
+                <button className="btn-secondary btn-icon" onClick={logout}>
                   <FaSignOutAlt />
                   Logout
-                </Button>
+                </button>
               </li>
             </>
           ) : (
             <li>
               <Link href="/account/login">
-                <a className="btn-seconadry btn-icon">
+                <a className="btn-secondary btn-icon">
                   <FaSignInAlt />
                   Login
                 </a>

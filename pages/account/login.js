@@ -34,7 +34,7 @@ export default function loginPage() {
           <div>
             <label htmlFor="email">Email Address</label>
             <input
-              type="email"
+              type="text"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
