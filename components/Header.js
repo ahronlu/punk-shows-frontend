@@ -34,7 +34,7 @@ export default function Header() {
               </li>
               <li>
                 <Link href="/account/dashboard">
-                  <a>Add Event</a>
+                  <a>Dashboard</a>
                 </Link>
               </li>
               <li>
