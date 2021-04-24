@@ -59,7 +59,7 @@ export default function AddEventPage({ token }) {
   return (
     <Layout title="Add New Event">
       <Link href="/events">Go Back</Link>
-      <h1>Add Event</h1>
+      <h1>Add Show</h1>
       <ToastContainer />
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.grid}>
@@ -136,7 +136,7 @@ export default function AddEventPage({ token }) {
           ></textarea>
         </div>
 
-        <input type="submit" value="Add Event" className="btn" />
+        <input type="submit" value="Add Show" className="btn" />
       </form>
     </Layout>
   );
