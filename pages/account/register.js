@@ -4,6 +4,7 @@ import { useState, useEffect, useContext } from "react";
 import Link from "next/link";
 import Layout from "@/components/Layout";
 import styles from "@/styles/AuthForm.module.css";
+import AuthContext from "@/context/AuthContext";
 import { FaUser } from "react-icons/fa";
 
 export default function registerPage() {
@@ -13,6 +14,8 @@ export default function registerPage() {
   const [passwordConfirm, setPasswordConfirm] = useState("");
 
   const { register, error } = useContext(AuthContext);
+
+  useEffect(() => error && toast.error(error));
 
   const handleSubmit = (e) => {
     e.preventDefault();
