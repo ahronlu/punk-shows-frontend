@@ -4,7 +4,7 @@ import styles from "@/styles/Form.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ImageUpload({ evtId, imageUploaded }) {
+export default function ImageUpload({ evtId, imageUploaded, token }) {
   const [image, setImage] = useState(null);
 
   const hanldeSubmit = async (e) => {
@@ -18,6 +18,9 @@ export default function ImageUpload({ evtId, imageUploaded }) {
     const res = await fetch(`${API_URL}/upload`, {
       method: "POST",
       body: formData,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     });
 
     if (res.ok) {
